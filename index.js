@@ -16,7 +16,6 @@ app.get("/", (req, res) => {
 
 //# MongoDB Setup :
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.cqqhz9d.mongodb.net/?retryWrites=true&w=majority`;
-console.log(uri);
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -33,6 +32,15 @@ async function run() {
 //# Get All Data From Server :
 const servicesCollection = client.db("FlyWithMe").collection("Services");
 
+//# Get Three Services From Server:
+app.get("/service", async (req, res) => {
+  const query = {};
+  const cursor = servicesCollection.find(query).limit(3);
+  const result = await cursor.toArray();
+  res.send(result);
+});
+
+//# Get All Services From Server:
 app.get("/services", async (req, res) => {
   const query = {};
   const cursor = servicesCollection.find(query);
