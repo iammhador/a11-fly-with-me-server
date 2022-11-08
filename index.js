@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 const app = express();
 
@@ -11,6 +13,34 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Fly With Me Server Running Perfectly....");
 });
+
+//# MongoDB Setup :
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.cqqhz9d.mongodb.net/?retryWrites=true&w=majority`;
+console.log(uri);
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1,
+});
+
+async function run() {
+  try {
+    client.connect((err) => {});
+  } finally {
+  }
+}
+
+//# Get All Data From Server :
+const servicesCollection = client.db("FlyWithMe").collection("Services");
+
+app.get("/services", async (req, res) => {
+  const query = {};
+  const cursor = servicesCollection.find(query);
+  const result = await cursor.toArray();
+  res.send(result);
+});
+
+run().catch((error) => console.log(error));
 
 //# Server Console Log :
 app.listen(port, () => {

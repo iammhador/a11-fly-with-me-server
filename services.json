@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Switzerland",
+    "description": "Switzerland is a mountainous Central European country, home to numerous lakes, villages and the high peaks of the Alps. Its cities contain medieval quarters, with landmarks like capital Bern’s Zytglogge clock tower and Lucerne’s wooden chapel bridge. The country is also known for its ski resorts and hiking trails. Banking and finance are key industries, and Swiss watches and chocolate are world renowned. ",
+    "price": 3300,
+    "rating": 5,
+    "image": "https://i.ibb.co/z216qJQ/pexels-louis-2399391.jpg"
+  },
+
+  {
+    "name": "Japan",
+    "description": "Japan is an island country in East Asia. It is situated in the northwest Pacific Ocean, and is bordered on the west by the Sea of Japan, while extending from the Sea of Okhotsk in the north toward the East China Sea, Philippine Sea, and Taiwan in the south.",
+    "price": 1500,
+    "rating": 4.5,
+    "image": "https://i.ibb.co/tDfMx63/pexels-aleksandar-pasaric-2339009.jpg"
+  },
+  {
+    "name": "Turkey",
+    "description": "Turkey, officially the Republic of Turkey, is a transcontinental country located mainly on the Anatolian Peninsula in Western Asia, with a small portion on the Balkan Peninsula in Southeast Europe.",
+    "price": 2200,
+    "rating": 4.7,
+    "image": "https://i.ibb.co/34fGqw1/pexels-taryn-elliott-3889741.jpg"
+  },
+  {
+    "name": "Greece",
+    "description": "Greece is a country in southeastern Europe with thousands of islands throughout the Aegean and Ionian seas. Influential in ancient times, it's often called the cradle of Western civilization. Athens, its capital, retains landmarks including the 5th-century B.C. Acropolis citadel with the Parthenon temple. Greece is also known for its beaches, from the black sands of Santorini to the party resorts of Mykonos.",
+    "price": 1900,
+    "rating": 4.2,
+    "image": "https://i.ibb.co/HGqbyDp/pexels-pixabay-161275.jpg"
+  },
+  {
+    "name": "France",
+    "description": "France, in Western Europe, encompasses medieval cities, alpine villages and Mediterranean beaches. Paris, its capital, is famed for its fashion houses, classical art museums including the Louvre and monuments like the Eiffel Tower. The country is also renowned for its wines and sophisticated cuisine. Lascaux’s ancient cave drawings, Lyon’s Roman theater and the vast Palace of Versailles attest to its rich history.",
+    "price": 2700,
+    "rating": 4.4,
+    "image": "https://i.ibb.co/vknpppH/pexels-alessandro-bonanni-11429078.jpg"
+  },
+  {
+    "name": "Netherlands ",
+    "description": "The Netherlands, a country in northwestern Europe, is known for a flat landscape of canals, tulip fields, windmills and cycling routes. Amsterdam, the capital, is home to the Rijksmuseum, Van Gogh Museum and the house where Jewish diarist Anne Frank hid during WWII. Canalside mansions and a trove of works from artists including Rembrandt and Vermeer remain from the city's 17th-century 'Golden Age.'",
+    "price": 2700,
+    "rating": 4.3,
+    "image": "https://i.ibb.co/vxK5qG0/pexels-bart-ros-10895514.jpg"
+  },
+  {
+    "name": "South Korea",
+    "description": "South Korea, an East Asian nation on the southern half of the Korean Peninsula, shares one of the world’s most heavily militarized borders with North Korea. It’s equally known for its green, hilly countryside dotted with cherry trees and centuries-old Buddhist temples, plus its coastal fishing villages, sub-tropical islands and high-tech cities such as Seoul, the capital.",
+    "price": 900,
+    "rating": 4.1,
+    "image": "https://i.ibb.co/7SGM7rN/pexels-ethan-brooke-2128042.jpg"
+  },
+
+  {
+    "name": "Italy",
+    "description": "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. Its capital, Rome, is home to the Vatican as well as landmark art and ancient ruins. Other major cities include Florence, with Renaissance masterpieces such as Michelangelo’s 'David' and Brunelleschi's Duomo; Venice, the city of canals; and Milan, Italy’s fashion capital.",
+    "price": 2300,
+    "rating": 4.3,
+    "image": "https://i.ibb.co/HgQdxWb/pexels-mario-cuadros-2760519.jpg"
+  },
+  {
+    "name": "Norway",
+    "description": "Norway is a Scandinavian country encompassing mountains, glaciers and deep coastal fjords. Oslo, the capital, is a city of green spaces and museums. Preserved 9th-century Viking ships are displayed at Oslo’s Viking Ship Museum. Bergen, with colorful wooden houses, is the starting point for cruises to the dramatic Sognefjord. Norway is also known for fishing, hiking and skiing, notably at Lillehammer’s Olympic resort.",
+    "price": 1300,
+    "rating": 4.0,
+    "image": "https://i.ibb.co/xYqrQdd/pexels-tobias-bj-rkli-1562058.jpg"
+  }
+]
