@@ -6,8 +6,8 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 //# Middleware :
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 //# Route Route Console Log :
 app.get("/", (req, res) => {
@@ -31,6 +31,7 @@ async function run() {
 
 //# Get All Data From Server :
 const servicesCollection = client.db("FlyWithMe").collection("Services");
+const reviewCollection = client.db("FlyWithMe").collection("reviews");
 
 //# Get First Three Services From Server:
 app.get("/service", async (req, res) => {
@@ -63,7 +64,6 @@ app.post("/services", async (req, res) => {
   res.send(result);
 });
 
-const reviewCollection = client.db("FlyWithMe").collection("reviews");
 //# Add Review To Server :
 app.post("/reviews", async (req, res) => {
   const reviews = req.body;
@@ -83,9 +83,11 @@ app.get("/reviews", async (req, res) => {
 app.get("/reviews/:id", async (req, res) => {
   const id = req.params.id;
   const query = { serviceId: id };
-  const result = await reviewCollection.findOne(query);
+  const cursor = reviewCollection.find(query);
+  const result = await cursor.toArray();
   res.send(result);
 });
+
 run().catch((error) => console.log(error));
 
 //# Server Console Log :
