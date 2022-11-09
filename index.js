@@ -64,17 +64,16 @@ app.post("/services", async (req, res) => {
   res.send(result);
 });
 
-//# Add Review To Server :
-app.post("/reviews", async (req, res) => {
-  const reviews = req.body;
-  const result = await reviewCollection.insertOne(reviews);
-  res.send(result);
-});
-
 //# Get All The Review :
 app.get("/reviews", async (req, res) => {
-  const query = {};
-  const cursor = reviewCollection.find();
+  email = req.query.email;
+  let query = {};
+  if (req.query.email) {
+    query = {
+      email: email,
+    };
+  }
+  const cursor = reviewCollection.find(query);
   const result = await cursor.toArray();
   res.send(result);
 });
@@ -85,6 +84,21 @@ app.get("/reviews/:id", async (req, res) => {
   const query = { serviceId: id };
   const cursor = reviewCollection.find(query);
   const result = await cursor.toArray();
+  res.send(result);
+});
+
+//# Add Review To Server :
+app.post("/reviews", async (req, res) => {
+  const reviews = req.body;
+  const result = await reviewCollection.insertOne(reviews);
+  res.send(result);
+});
+
+//# Delete Review  :
+app.delete("/reviews/:id", async (req, res) => {
+  const id = req.params.id;
+  const query = { _id: ObjectId(id) };
+  const result = await reviewCollection.deleteOne(query);
   res.send(result);
 });
 
