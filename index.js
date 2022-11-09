@@ -1,6 +1,6 @@
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 const app = express();
@@ -32,7 +32,7 @@ async function run() {
 //# Get All Data From Server :
 const servicesCollection = client.db("FlyWithMe").collection("Services");
 
-//# Get Three Services From Server:
+//# Get First Three Services From Server:
 app.get("/service", async (req, res) => {
   const query = {};
   const cursor = servicesCollection.find(query).limit(3);
@@ -48,11 +48,19 @@ app.get("/services", async (req, res) => {
   res.send(result);
 });
 
+//# Get Services Details By Using ID :
 app.get("/services/:id", async (req, res) => {
   const id = req.params.id;
   const query = { _id: ObjectId(id) };
   const cursor = await servicesCollection.findOne(query);
   res.send(cursor);
+});
+
+//# Add To Services :
+app.post("/services", async (req, res) => {
+  const service = req.body;
+  const result = await servicesCollection.insertOne(service);
+  res.send(result);
 });
 
 run().catch((error) => console.log(error));
