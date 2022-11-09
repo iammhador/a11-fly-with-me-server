@@ -35,7 +35,7 @@ const servicesCollection = client.db("FlyWithMe").collection("Services");
 //# Get First Three Services From Server:
 app.get("/service", async (req, res) => {
   const query = {};
-  const cursor = servicesCollection.find(query).limit(3);
+  const cursor = servicesCollection.find(query).sort({ $natural: -1 }).limit(3);
   const result = await cursor.toArray();
   res.send(result);
 });
@@ -63,6 +63,29 @@ app.post("/services", async (req, res) => {
   res.send(result);
 });
 
+const reviewCollection = client.db("FlyWithMe").collection("reviews");
+//# Add Review To Server :
+app.post("/reviews", async (req, res) => {
+  const reviews = req.body;
+  const result = await reviewCollection.insertOne(reviews);
+  res.send(result);
+});
+
+//# Get All The Review :
+app.get("/reviews", async (req, res) => {
+  const query = {};
+  const cursor = reviewCollection.find();
+  const result = await cursor.toArray();
+  res.send(result);
+});
+
+//# Find Review By Id :
+app.get("/reviews/:id", async (req, res) => {
+  const id = req.params.id;
+  const query = { serviceId: id };
+  const result = await reviewCollection.findOne(query);
+  res.send(result);
+});
 run().catch((error) => console.log(error));
 
 //# Server Console Log :
