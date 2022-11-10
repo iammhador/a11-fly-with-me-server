@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId, Logger } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -53,8 +53,8 @@ app.get("/services", async (req, res) => {
 app.get("/services/:id", async (req, res) => {
   const id = req.params.id;
   const query = { _id: ObjectId(id) };
-  const cursor = await servicesCollection.findOne(query);
-  res.send(cursor);
+  const result = await servicesCollection.findOne(query);
+  res.send(result);
 });
 
 //# Add To Services :
@@ -82,7 +82,7 @@ app.get("/reviews", async (req, res) => {
 app.get("/reviews/:id", async (req, res) => {
   const id = req.params.id;
   const query = { serviceId: id };
-  const cursor = reviewCollection.find(query);
+  const cursor = reviewCollection.find(query).sort({ $natural: -1 });
   const result = await cursor.toArray();
   res.send(result);
 });
@@ -94,6 +94,37 @@ app.post("/reviews", async (req, res) => {
   res.send(result);
 });
 
+//# All Reviews :
+app.get("/allreviews", async (req, res) => {
+  const query = {};
+  const cursor = reviewCollection.find(query);
+  const result = await cursor.toArray();
+  res.send(result);
+});
+
+//# Get Specific Reviews From ALl Reviews :
+app.get("/allreviews/:id", async (req, res) => {
+  const id = req.params.id;
+  const query = { _id: ObjectId(id) };
+  const result = await reviewCollection.findOne(query);
+  res.send(result);
+});
+
+//# Update Review :
+app.patch("/allreviews/:id", async (req, res) => {
+  const id = req.params.id;
+  const rating = req.body;
+  const massage = req.body;
+  const query = { _id: ObjectId(id) };
+  const updatedDoc = {
+    $set: {
+      massage: massage,
+      rating: rating,
+    },
+  };
+  const result = await reviewCollection.updateOne(query, updatedDoc);
+  res.send(result);
+});
 //# Delete Review  :
 app.delete("/reviews/:id", async (req, res) => {
   const id = req.params.id;
