@@ -110,21 +110,25 @@ app.get("/allreviews/:id", async (req, res) => {
   res.send(result);
 });
 
-//# Update Review :
-app.patch("/allreviews/:id", async (req, res) => {
-  const id = req.params.id;
-  const rating = req.body;
-  const massage = req.body;
-  const query = { _id: ObjectId(id) };
-  const updatedDoc = {
-    $set: {
-      massage: massage,
-      // rating: rating,
-    },
-  };
-  const result = await reviewCollection.updateOne(query, updatedDoc);
-  res.send(result);
-});
+//# Update Review ( Not Working ) :
+// app.patch("/allreviews/:id", async (req, res) => {
+//   const id = req.params.id;
+//   const massage = req.body.massage;
+//   console.log(massage);
+//   const query = { _id: ObjectId(id) };
+//   const updatedDoc = {
+//     $set: { massage: massage },
+//   };
+//   const result = await reviewCollection.updateOne(query, updatedDoc);
+//   res.send(result);
+
+// const result = await reviewCollection.updateOne(
+//   { _id: ObjectId(id) },
+//   { $set: req.body }
+// );
+//   res.send(result);
+// });
+
 //# Delete Review  :
 app.delete("/reviews/:id", async (req, res) => {
   const id = req.params.id;
