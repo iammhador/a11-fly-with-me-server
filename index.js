@@ -119,7 +119,7 @@ app.patch("/allreviews/:id", async (req, res) => {
   const updatedDoc = {
     $set: {
       massage: massage,
-      rating: rating,
+      // rating: rating,
     },
   };
   const result = await reviewCollection.updateOne(query, updatedDoc);
