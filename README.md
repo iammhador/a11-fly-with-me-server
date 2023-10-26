@@ -1,31 +1,23 @@
-Live Site Link : https://fly-with-me-484dc.web.app <br>
-Vercel Site Link : https://fly-with-me.vercel.app/ <br>
-Github Client Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador <br>
-Github Server Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-iammhador <br>
+# Fly With Me - Tourist Guide Service
 
-Site Name : Fly With Me <br>
-Develop By : Mehedy Hasan Ador <br>
-Site Description : 'Fly With Me' is a tourist guide service site. Who are new and don't know where and how to go places, We help them to find best and perfect place for him/ her.
-I Have five years of experience on this sector. If you want to know more, Fill free to contact me.
+Welcome to Fly With Me! This is a tourist guide service site designed to assist travelers, especially those who are new and unfamiliar with their destinations. Our goal is to help you find the best and most suitable places to visit. We're here to make your journey unforgettable.
 
-Framework : Tailwind <br>
-Component Library : Daisy UI, Hyper UI, Float UI, Mamba, Tailwinduikit, Tailwind-kit And Many More. <br>
-Images : https://www.pexels.com/ <br>
-Illustrator image : https://undraw.co/ and https://storyset.com/ <br>
-Image Size Compromise : Tiny Png <br>
-Icons : React Icon <br>
-Image Upload : IMGBB <br>
-Special NPM Package : React-Phot_view <br>
+## Site Links
 
-Server information :
+- [Live Site](https://fly-with-me-484dc.web.app)
+- [Client Repository](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador)
+- [Server Repository](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-iammhador)
 
-1. Cors And Express.json use as a middleware.
-2. Use mongodb server to create data.
-3. create Service And Review Collection.
-4. Get Service Data.
-5. Find Specific Service Data By ID.
-6. Get Reviews Data
-7. Find Review By Using Email Address.
-8. Show All Reviews To Server.
-9. Delete Reviews.
-10. Try To Edit Review.
+## Database
+
+- **Name:** MongoDB
+
+## Contact
+
+If you have any questions, suggestions, or inquiries, feel free to contact us. We're here to assist you in every possible way.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE). You are free to use and modify the code as per your needs.
+
+We look forward to making your travel experiences more enjoyable with Fly With Me! 🌍✈️
